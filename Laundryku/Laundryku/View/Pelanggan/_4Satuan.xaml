@@ -1,0 +1,162 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Laundryku.View.Pelanggan._4Satuan">
+<StackLayout>
+            <StackLayout>
+
+            <StackLayout.Padding>
+                <OnIdiom x:TypeArguments="Thickness">
+                    <OnIdiom.Phone>5,0,5,0</OnIdiom.Phone>
+                    <OnIdiom.Tablet>150,160,150,0</OnIdiom.Tablet>
+                </OnIdiom>
+            </StackLayout.Padding>
+            <!--search-->
+            <Grid>
+                <Frame Padding="0,0,0,0"  >
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="80"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="80"/>
+                        </Grid.RowDefinitions>
+
+                    <SearchBar Grid.Row="0" Grid.Column="0" Placeholder="Search Peesanan" x:Name="MainSearchBar"/>
+                    </Grid>
+                </Frame>
+            </Grid>
+            <StackLayout>
+            <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+            <ListView x:Name="ListPelanggan" Grid.Row="0" SeparatorColor="Black" HasUnevenRows="True" Margin="10,3,10,3"
+                      SelectedItem="{Binding SelectedItem, Mode=TwoWay}"
+                      ItemsSource="{Binding Items}"
+                      >
+                <!--IsPullToRefreshEnabled="true"-->
+                      <!--ItemTapped="ItemTapped">-->
+             
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                                <StackLayout Orientation="Horizontal">
+                                 
+                                    <Grid Padding="8,6,8,6">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="70"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+
+        </Grid.RowDefinitions>
+        <Image Margin="5,0,0,0" Source="{Binding ImageProductSatuan}" Grid.Column="0" Grid.RowSpan="3" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Scale="1.1"/>
+        <!--nama product satuan-->
+        <Label Margin="5,0,0,0" Text="{Binding NamaProdukSatuan}" Grid.Column="1" Grid.ColumnSpan="5" Grid.Row="0" FontAttributes="Bold" FontSize="14" HorizontalOptions="FillAndExpand" />
+
+        <!--harga product satuan-->
+        <Label Margin="5,0,0,0" Text="{Binding HargaProdukSatuan}" Grid.Column="1" Grid.Row="1" TextColor="Blue" FontSize="12" HorizontalOptions="FillAndExpand"/>
+        <Label Margin="5,0,0,0" Text="{Binding DurasiProdukSatuan}" Grid.Column="2" Grid.ColumnSpan="3" Grid.Row="1" TextColor="Black" FontSize="12" HorizontalOptions="FillAndExpand"/>
+
+        <!--finish date-->
+        <Label Margin="5,0,0,0" Text="{Binding EstimateDateProdukSatuan}" Grid.Column="1" Grid.Row="2"  Grid.ColumnSpan="4" FontSize="10" HorizontalOptions="FillAndExpand"/>
+        <StackLayout Orientation="Horizontal"
+                 VerticalOptions="EndAndExpand"
+                 HorizontalOptions="EndAndExpand"
+                 Margin="80,0,10,0" Grid.Row="1" Grid.Column="3" Grid.ColumnSpan="3" Grid.RowSpan="3">
+        
+            <Button CommandParameter = "{Binding IdProductSatuan}"
+                    TextColor="Black"
+                    Background="minus.png"
+                    Text="-"
+                    FontSize="Micro"
+                    CornerRadius="10"
+                    HeightRequest="30"
+                    WidthRequest="30"
+                    FontAttributes="Bold"
+                    x:Name="btnMinus"
+                    Clicked="btnMinus_Clicked"
+                    HorizontalOptions="Center" VerticalOptions="Center"/>
+            
+            <Label WidthRequest="25"
+                   Text="{Binding BanyaknyaProdukSatuan}"
+                   FontAttributes="Bold"
+                   VerticalOptions="Center"
+                   HorizontalOptions="Center"
+                   HorizontalTextAlignment="Center"/>
+            
+            <Button CommandParameter = "{Binding IdProductSatuan}"
+                    Background="plus.png"
+                    TextColor="Black"
+                    Text="+"
+                    FontSize="Micro"
+                    CornerRadius="10"
+                    HeightRequest="30"
+                    WidthRequest="30"
+                    FontAttributes="Bold"
+                    x:Name="btnPlus"
+                    Clicked="btnPlus_Clicked"
+                    HorizontalOptions="Center"/>
+
+                 
+            
+        </StackLayout>
+     </Grid>
+                                    </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+               
+                
+                </Grid>
+                <Grid>
+                    <Frame>
+                    <!--<Label x:Name="total"
+                    VerticalOptions="Start"
+                    HorizontalOptions="Start"/>-->
+
+                    <Grid Padding="15,5,15,15">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="120"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="15" />
+                        <RowDefinition Height="20" />
+                    </Grid.RowDefinitions>
+                     <Label Grid.Row="0" Grid.Column="0" Text="Total Harga" FontSize="12"/>
+                     <Label x:Name="total" Grid.Row="1" Grid.Column="0" TextColor="#FF8D14"/>
+                     <Button x:Name="btnLanjutkan"
+                        Grid.Row="0"
+                        Grid.Column="1"
+                        BorderWidth="2"
+                        Grid.RowSpan="2"
+                        BorderRadius="8"
+                        Text="Lanjut"
+                        FontAttributes="Bold"
+                        />
+                     </Grid>
+                    </Frame>
+                </Grid>
+            </StackLayout>
+        </StackLayout>
+</StackLayout>
+</ContentPage>
+
+<!--<Label x:Name="FirstName">
+        <Label.Text>
+            <MultiBinding StringFormat="{}{0} {1}">
+                <Binding Path="FirstName" />
+                <Binding Path="LastName" />
+            </MultiBinding>
+        </Label.Text>
+    </Label>-->

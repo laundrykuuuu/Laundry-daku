@@ -1,0 +1,257 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Laundryku.View.Pelanggan._3Pesanan" BackgroundColor="White">
+    <ContentPage.Content>
+     
+        <ScrollView>
+
+            <StackLayout>
+            <Frame BackgroundColor="Silver" HeightRequest="25" Padding="0,0,0,0">
+                <Label Margin="10,5,0,0" Text="Informasi Pelanggan"/>
+            </Frame>
+            <Frame BackgroundColor="White" Padding="15,10,15,10">
+                <Grid>
+                     <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="50"/>
+                            <ColumnDefinition Width="*"/>
+                     </Grid.ColumnDefinitions>
+                   <Grid.RowDefinitions>
+                        <RowDefinition Height="30" />
+                        <RowDefinition Height="30" />
+                       <RowDefinition Height="30" />
+                    </Grid.RowDefinitions>
+
+                    <Label Grid.Column="1" Grid.Row="0" x:Name="Nama" Text="a"/>
+                    <Label Grid.Column="1" Grid.Row="1" x:Name="NoHp" Text="a"/>
+                    <Label Grid.Column="1" Grid.Row="2" x:Name="Alamat" Text="a"/>
+
+                </Grid>
+            </Frame>
+            
+            <Frame BackgroundColor="Silver" HeightRequest="25" Padding="0,0,0,0">
+                <Label Margin="10,5,0,0" Text="Detail Cucian"/>
+            </Frame>
+
+            <Frame Padding="15,10,15,10">
+                <Grid>
+                <Button
+                    x:Name="service1"
+                    Clicked="onchengeService"
+                Text="             Kiloan              "
+                Grid.Column="0"
+                BorderRadius="0" BorderWidth="0"
+                CommandParameter="Kiloan"
+                IsEnabled="true"
+                Image="addbutton.png"
+                HeightRequest="40"
+                VerticalOptions="Center" HorizontalOptions="Center"/>
+
+                <Button
+                    x:Name="service2"
+                    Clicked="onchengeService"
+                Text="             Satuan             "
+                Grid.Column="1"
+                BorderRadius="0" BorderWidth="0"
+                CommandParameter="Satuan"
+                IsEnabled="true"
+                Image="addbutton.png"
+                HeightRequest="40"
+                VerticalOptions="Center" HorizontalOptions="Center"/>
+
+                </Grid>
+            </Frame>
+
+            <Frame BackgroundColor="Silver" HeightRequest="25" Padding="0,0,0,0" x:Name="framelabeltipelayanan">
+                <Label Margin="10,5,0,0" Text="Tipe Layanan"/>
+            </Frame>
+            <Frame Padding="15,10,15,10" x:Name="framemenutipelayanan">
+                <Grid>
+                <Button
+                x:Name="typeLayanan1"
+                Clicked="onClickTypeLayanan"
+                Grid.Column="0"
+                BorderRadius="0" BorderWidth="0"
+                IsEnabled="true"
+                Image="addbutton.png"
+                HeightRequest="80"
+                MinimumHeightRequest="40"
+                CommandParameter="Cuci Kering + Setrika"
+                VerticalOptions="Center" HorizontalOptions="Center"/>
+                <Button
+                x:Name="typeLayanan2"
+                Clicked="onClickTypeLayanan"
+                Grid.Column="1"
+                BorderRadius="0" BorderWidth="0"
+                IsEnabled="true"
+                Image="addbutton.png"
+                HeightRequest="80"
+                MinimumHeightRequest="40"
+                CommandParameter="Cuci Kering"
+                VerticalOptions="Center" HorizontalOptions="Center"/>
+                <Button
+                x:Name="typeLayanan3"
+                Clicked="onClickTypeLayanan"
+                Grid.Column="2"
+                BorderRadius="0" BorderWidth="0"
+                IsEnabled="true"
+                Image="addbutton.png"
+                HeightRequest="80"
+                MinimumHeightRequest="40"
+                CommandParameter="Cuci Kering"
+                VerticalOptions="Center" HorizontalOptions="Center"/>
+                </Grid>
+            </Frame>
+
+             <!--//Kiloan-->
+             <Frame x:Name="framepesanankiloan1" Padding="15,15,15,10">
+                <Grid>
+                <Button
+                x:Name="durasikiloanselected"
+                Clicked="durasikiloan"
+                Text="Pilih durasi layanan"
+                BackgroundColor="Transparent"
+                Grid.Column="0"
+                BorderRadius="0" BorderWidth="0"
+                IsEnabled="true"
+                Image="addbutton.png"
+                HeightRequest="40"
+                VerticalOptions="Start" HorizontalOptions="Start"/>
+
+                <Button
+                Text=">"
+                BackgroundColor="Transparent"
+                Grid.Column="0"
+                BorderRadius="0" BorderWidth="0"
+                IsEnabled="true"
+                Image="addbutton.png"
+                HeightRequest="40"
+                VerticalOptions="End" HorizontalOptions="End"/>
+
+                </Grid>
+                 
+              </Frame>
+
+             <Frame x:Name="framepesanankiloan2" Padding="15,15,15,5">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="200" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="100" />
+                    </Grid.RowDefinitions>
+
+                <Label Margin="15,0,0,15" 
+                Text="Berat"
+                BackgroundColor="Transparent"
+                Grid.Row="0"
+                Grid.Column="0"
+                IsEnabled="true"
+                HeightRequest="40"
+                VerticalOptions="Start" HorizontalOptions="Start"/>
+
+                <Entry x:Name="beratkiloan" Keyboard="Numeric" Unfocused="ontextchangetotalharrgakiloan" WidthRequest="60" Grid.Row="0"  Grid.Column="0" Margin="10,20,0,0" Placeholder="Masukan Berat" />
+
+                <Label Grid.Row="0" Grid.Column="1" Margin="10,20,0,0" Text="/kg" WidthRequest="60" HorizontalOptions="Start" VerticalOptions="Center"/>
+
+                <Label Margin="15,0,0,15" 
+                Text="Catatan"
+                BackgroundColor="Transparent"
+                Grid.Row="1"
+                IsEnabled="true"
+                HeightRequest="40"
+                VerticalOptions="Start" HorizontalOptions="Start"/>
+
+                <Editor Margin="10,20,0,0" Grid.Row="1" Grid.ColumnSpan="2" Placeholder="Tulis detail pakaian dan jumlahnya" />
+
+                </Grid>
+                </Frame>
+                <!--//kiloan-->
+
+                <!--Satuan-->
+                <Frame x:Name="framepesanansatuan" Padding="15,15,15,10">
+                <Grid>
+                <Button
+                x:Name="durasisatuanexpressselected"
+                Clicked="durasisatuan"
+                BackgroundColor="Transparent"
+                Grid.Column="0"
+                BorderRadius="0" BorderWidth="0"
+                IsEnabled="true"
+                Image="addbutton.png"
+                HeightRequest="40"
+                VerticalOptions="Start" HorizontalOptions="Start"/>
+
+                <Button
+                Text=">"
+                BackgroundColor="Transparent"
+                Grid.Column="0"
+                BorderRadius="0" BorderWidth="0"
+                IsEnabled="true"
+                Image="addbutton.png"
+                HeightRequest="40"
+                VerticalOptions="End" HorizontalOptions="End"/>
+                <Button
+                x:Name="durasisatuanregularselected"
+                Clicked="durasisatuan"
+                BackgroundColor="Transparent"
+                Grid.Row="1"
+                Grid.Column="0"
+                BorderRadius="0" BorderWidth="0"
+                IsEnabled="true"
+                Image="addbutton.png"
+                HeightRequest="40"
+                VerticalOptions="Start" HorizontalOptions="Start"/>
+
+                <Button
+                Text=">"
+                BackgroundColor="Transparent"
+                Grid.Row="1"
+                Grid.Column="0"
+                BorderRadius="0" BorderWidth="0"
+                IsEnabled="true"
+                Image="addbutton.png"
+                HeightRequest="40"
+                VerticalOptions="End" HorizontalOptions="End"/>
+
+                </Grid>
+
+                <!--Satuan-->
+
+              </Frame>
+
+
+                <Frame BackgroundColor="Silver" HeightRequest="25" Padding="0,0,0,0">
+                <Label Margin="10,5,0,0" Text="Detail Container"/>
+                </Frame>
+
+                 <Grid Padding="15,15,15,15">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="120"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="15" />
+                        <RowDefinition Height="20" />
+                    </Grid.RowDefinitions>
+                     <Label Grid.Row="0" Grid.Column="0" Text="Total Harga" FontSize="12"/>
+                     <Label x:Name="totalHarga" Grid.Row="1" Grid.Column="0" TextColor="#FF8D14"/>
+                     <Button x:Name="btnLanjutkan"
+                        Grid.Row="0"
+                        Grid.Column="1"
+                        BorderWidth="2"
+                        Grid.RowSpan="2"
+                        
+                        BorderRadius="8"
+                        Text="Lanjut"
+                        FontAttributes="Bold"
+                        />
+                     </Grid>
+            </StackLayout>
+
+        </ScrollView>
+            
+    </ContentPage.Content>
+</ContentPage>

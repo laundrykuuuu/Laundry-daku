@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Laundryku.View.Pelanggan._2BuatDataPelanggan">
+    <ContentPage.Content>
+        <StackLayout Padding="30,40,20,30" >
+                <Label Text="Nama" />
+                <Entry x:Name="ENama" Placeholder="Masukan nama" Margin="0,0,0,20"/>
+                <Label Text="Nomor Hp" />
+                <Entry x:Name="ENomorHp" Placeholder="Masukan nomor Hp" Margin="0,0,0,20"/>
+                <Label Text="Alamat"/>
+                <Editor x:Name="EAlamat" HeightRequest="120" Placeholder="Masukan alamat"/>
+
+            <StackLayout VerticalOptions="EndAndExpand">
+                <StackLayout Padding="0,0,0,30">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="25"/>
+                            <ColumnDefinition Width="10"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <CheckBox x:Name="flagisccheck" CheckedChanged="FlagSimpanData" IsChecked="False" Grid.Column="0"/>
+
+                        <Label Text="Simpan data pelanggan" Grid.Column="2" VerticalTextAlignment="Center"></Label>
+                </Grid>
+                </StackLayout>
+
+                <Button
+                    Clicked="SimpanDataPelanggan"
+                    BorderWidth="2"
+                    BackgroundColor="#FF8D14"
+                    TextColor="White"
+                    BorderRadius="8"
+                    Text="Lanjut"
+                    FontAttributes="Bold"
+                    />
+            </StackLayout>
+
+        </StackLayout>
+        
+    </ContentPage.Content>
+</ContentPage>

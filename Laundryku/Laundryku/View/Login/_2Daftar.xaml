@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Laundryku.View.Login._2Daftar"
+             BackgroundColor="White">
+   <!--<StackLayout Margin="20,100,20,20">
+        <Label 
+        Text="Nama"
+        FontSize="16"
+        TextColor="#252577"
+        VerticalTextAlignment="Start"
+        HorizontalTextAlignment="Start"
+        />
+        <Entry
+            BackgroundColor="White"
+            Placeholder="Msukan nama"
+            PlaceholderColor="Gray"/>
+
+        <Label 
+        Text="Nomor HP"
+        FontSize="16"
+        TextColor="#252577"
+        VerticalTextAlignment="Start"
+        HorizontalTextAlignment="Start"
+        />
+
+        <Entry
+            BackgroundColor="White"
+            Placeholder="Msukan nomor HP"
+            PlaceholderColor="Gray"/>
+
+        <StackLayout Margin="40,100,40,40" VerticalOptions="Center">
+
+        <Button 
+        x:Name="btnDaftar"
+        Clicked="DaftarOnClicked"
+        BorderWidth="2"
+        BorderRadius="8"
+        BorderColor="#FF8D14" 
+        BackgroundColor="White" 
+        TextColor="#FF8D14"
+        Text="Daftar"
+        FontAttributes="Bold"
+        />
+
+        </StackLayout>
+
+
+  </StackLayout>-->
+
+    <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+        <StackLayout Margin="20,100,20,20" Orientation="Vertical" VerticalOptions="Start">
+            <!-- top controls -->
+            <Label 
+                Text="Nama"
+                FontSize="16"
+                TextColor="#252577"
+                VerticalTextAlignment="Start"
+                HorizontalTextAlignment="Start"
+                />
+            <Entry
+                BackgroundColor="White"
+                Placeholder="Msukan nama"
+                PlaceholderColor="Gray"/>
+
+            <Label 
+                Text="Nomor HP"
+                FontSize="16"
+                TextColor="#252577"
+                VerticalTextAlignment="Start"
+                HorizontalTextAlignment="Start"
+                />
+
+            <Entry
+                BackgroundColor="White"
+                Placeholder="Msukan nomor HP"
+                PlaceholderColor="Gray"/>
+
+        </StackLayout>
+        <StackLayout VerticalOptions="CenterAndExpand">
+            <!-- middle controls -->
+        </StackLayout>
+        <StackLayout Margin="0,0,0,10" Orientation="Horizontal" VerticalOptions="End">
+                <Button Padding="0,0,0,0" WidthRequest="250" MinimumHeightRequest="150"
+                     x:Name="btnDaftar"
+                     BorderWidth="2"
+                     BackgroundColor="#FF8D14"
+                     TextColor="White"
+                     BorderRadius="8"
+                     Text="Daftar"
+                     FontAttributes="Bold"
+                     HorizontalOptions="CenterAndExpand"
+                />
+        </StackLayout>
+    </StackLayout>
+
+</ContentPage>

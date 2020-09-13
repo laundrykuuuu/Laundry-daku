@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Laundryku.View.Pelanggan._4Kiloan">
+    <!--<ContentPage.Content>
+        <StackLayout Padding="30,40,20,20" >
+                <Button x:Name="duration1" Clicked="onchangeDuration" Margin="0,0,0,20"/>
+                <Button x:Name="duration2" Clicked="onchangeDuration" Margin="0,0,0,20"/>
+                <Button x:Name="duration3" Clicked="onchangeDuration" Margin="0,0,0,20"/>
+                <Button x:Name="duration4" Clicked="onchangeDuration" Margin="0,0,0,20"/>
+        </StackLayout>
+        
+    </ContentPage.Content>-->
+    <Grid>
+        <StackLayout>
+            <StackLayout.Padding>
+                <OnIdiom x:TypeArguments="Thickness">
+                    <OnIdiom.Phone>5,0,5,0</OnIdiom.Phone>
+                    <OnIdiom.Tablet>150,160,150,0</OnIdiom.Tablet>
+                </OnIdiom>
+            </StackLayout.Padding>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50" />
+                </Grid.RowDefinitions>
+            </Grid>
+            <ListView Grid.Row="1" x:Name="MyListView" ItemTapped="Handle_ItemTapped" SelectedItem="{Binding SelectedItem, Mode=TwoWay}" ItemsSource="{Binding Items}" HasUnevenRows="True" SeparatorColor="White">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            
+                            <StackLayout Orientation="Vertical">
+                                <Frame HasShadow="true" Margin="7" BackgroundColor="#f6f5f1" Padding="5,3,5,3">
+                                <StackLayout Orientation="Horizontal">
+                                    <Grid Padding="10,8,10,8">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="50" />
+                                            <ColumnDefinition Width="*" />
+                                        </Grid.ColumnDefinitions>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="*" />
+                                        </Grid.RowDefinitions>
+                                        <Image Grid.RowSpan="2" Grid.Column="0" Source="icon.png" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
+                                        <Label Grid.Row="0" Grid.Column="1" Text="{Binding durasiProdukKiloan}" FontAttributes="Bold" FontSize="18" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
+                                        <Label Grid.Row="1" Grid.Column="1" Text="{Binding hargaProdukKiloan}" FontSize="14" HorizontalOptions="EndAndExpand" VerticalOptions="EndAndExpand"/>
+                                        </Grid>
+                                </StackLayout>
+                                    </Frame>
+                            </StackLayout>
+                        </ViewCell>
+                            
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+        </Grid>
+
+</ContentPage>

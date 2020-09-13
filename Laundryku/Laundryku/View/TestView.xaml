@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Laundryku.View.TestView">
+    <ContentPage.Content>
+    <Grid Padding="8,6,8,6">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="70"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+
+        </Grid.RowDefinitions>
+        <Image Margin="5,0,0,0" Source="icon.png" Grid.Column="0" Grid.RowSpan="3" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Scale="1.1"/>
+        <!--nama product satuan-->
+        <Label Margin="5,0,0,0" Text="Bad Cover Double Bad Cover Double Bad " Grid.Column="1" Grid.ColumnSpan="4" Grid.Row="0" FontAttributes="Bold" FontSize="14" HorizontalOptions="FillAndExpand" />
+
+        <!--harga product satuan-->
+        <Label Margin="5,0,0,0" Text="Rp 26.000/pcs" Grid.Column="1" Grid.Row="1" TextColor="Blue" FontSize="12" HorizontalOptions="FillAndExpand"/>
+        <Label Margin="5,0,0,0" Text="                            1 Days" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="1" TextColor="Black" FontSize="12" HorizontalOptions="FillAndExpand"/>
+
+        <!--<Label x:Name="FirstName">
+                <Label.Text>
+                    <MultiBinding StringFormat="{}{0} {1}">
+                        <Binding Path="FirstName" />
+                        <Binding Path="LastName" />
+                    </MultiBinding>
+                </Label.Text>
+        </Label>-->
+
+        <!--finish date-->
+        <Label Margin="5,0,0,0" Text="Finished date : " Grid.Column="1" Grid.Row="2"  Grid.ColumnSpan="3" FontSize="10" HorizontalOptions="FillAndExpand"/>
+        <Label Margin="5,0,0,0" Text="                           20/12/2020" Grid.Column="1" Grid.ColumnSpan="4" Grid.Row="2"  FontSize="11" HorizontalOptions="FillAndExpand"/>
+
+        <!--<Label Margin="5,0,0,0" Text="Qty  :" FontAttributes="Bold" Grid.Column="1" Grid.Row="3" FontSize="14" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand"/>-->
+        <!--<Label Margin="5,0,0,0" x:Name="quantity" Text="           0" FontAttributes="Bold" Grid.Column="1" Grid.Row="3" FontSize="14" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand"/>-->
+                                        
+        <!--<Stepper x:Name="qty"
+                    Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="3"
+                    VerticalOptions="EndAndExpand"
+                    HorizontalOptions="EndAndExpand"
+                    Value="0"
+                    Increment="1"
+                    StepperPosition="0"
+                    ValueChanged="stepper_ValueChanged"/>-->
+
+        <StackLayout Orientation="Horizontal"
+                 VerticalOptions="CenterAndExpand"
+                 HorizontalOptions="CenterAndExpand"
+                 Margin="10,0,10,0" Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="3" Grid.RowSpan="3">
+        
+            <Button BackgroundColor="{Binding ButtonColor}"
+                    CommandParameter="zxcv"
+                    TextColor="White"
+                    Text="-"
+                    FontSize="Micro"
+                    CornerRadius="10"
+                    HeightRequest="30"
+                    WidthRequest="30"
+                    FontAttributes="Bold"
+                    x:Name="btnMinus"
+                    Clicked="btnMinus_Clicked"
+                    HorizontalOptions="Center" VerticalOptions="Center"/>
+            
+            <Label TextColor="{Binding LabelColor}"
+                   WidthRequest="25"
+                   Text="{Binding Text}"
+                   FontAttributes="Bold"
+                   VerticalOptions="Center"
+                   HorizontalOptions="Center"
+                   HorizontalTextAlignment="Center"
+                   x:Name="lblValue"/>
+            
+            <Button BackgroundColor="{Binding ButtonColor}"
+                    CommandParameter="zxcv"
+                    TextColor="White"
+                    Text="+"
+                    FontSize="Micro"
+                    CornerRadius="10"
+                    HeightRequest="30"
+                    WidthRequest="30"
+                    FontAttributes="Bold"
+                    x:Name="btnPlus"
+                    Clicked="btnPlus_Clicked"
+                    HorizontalOptions="Center"/>                    
+            
+        </StackLayout>
+     </Grid>
+
+    
+          </ContentPage.Content>                              
+</ContentPage>

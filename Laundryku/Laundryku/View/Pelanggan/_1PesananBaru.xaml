@@ -1,0 +1,174 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Laundryku.View.Pelanggan._1PesananBaru"
+             Title="Pesanan Baru">
+    <ContentPage.Content>
+
+        <Grid>
+            <StackLayout VerticalOptions="Start" MinimumHeightRequest="80" >
+                <Frame HasShadow="True" Padding="0,10,0,10">
+                <Grid>
+                <Button
+                BackgroundColor="Transparent"
+                Text="Due Date"
+                Grid.Column="0"
+                BorderRadius="0" BorderWidth="0"
+                IsEnabled="true"
+                Image="addbutton.png"
+                HeightRequest="40"
+                MinimumHeightRequest="40"
+                VerticalOptions="Center" HorizontalOptions="Center"/>
+
+                <Button
+                BackgroundColor="Transparent"
+                Text="Terbaru"
+                Grid.Column="1"
+                BorderRadius="0" BorderWidth="0"
+                IsEnabled="true"
+                Image="addbutton.png"
+                HeightRequest="40"
+                MinimumHeightRequest="40"
+                VerticalOptions="Center" HorizontalOptions="Center"/>
+
+                <Button
+                BackgroundColor="Transparent"
+                Text="Semua"
+                Grid.Column="2"
+                BorderRadius="0" BorderWidth="0"
+                IsEnabled="true"
+                Image="addbutton.png"
+                HeightRequest="40"
+                MinimumHeightRequest="40"
+                VerticalOptions="Center" HorizontalOptions="Center"/>
+                </Grid>
+                </Frame>
+        </StackLayout>
+
+        <StackLayout Margin="0,50,0,0">
+            <StackLayout>
+
+            <StackLayout.Padding>
+                <OnIdiom x:TypeArguments="Thickness">
+                    <OnIdiom.Phone>5,0,5,0</OnIdiom.Phone>
+                    <OnIdiom.Tablet>150,160,150,0</OnIdiom.Tablet>
+                </OnIdiom>
+            </StackLayout.Padding>
+            <!--search-->
+            <Grid>
+                <Frame Padding="0,0,0,0"  >
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="80"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="80"/>
+                        </Grid.RowDefinitions>
+
+                    <SearchBar Grid.Row="0" Grid.Column="0" Placeholder="Search Peesanan" x:Name="MainSearchBar"/>
+                    <Label Grid.Row="0" Grid.Column="1" Text="filter"></Label>
+
+                    </Grid>
+                </Frame>
+                <!--<Frame Padding="0,0,0,0" Grid.Row="0" Grid.Column="1">
+                
+                
+                </Frame>-->
+                
+            </Grid>
+            <!--List-->
+            <Grid>
+                
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+            <ListView x:Name="ListPelanggan" Grid.Row="0" SeparatorColor="Black" HasUnevenRows="True" Margin="10,3,10,3"
+                      SelectedItem="{Binding SelectedItem, Mode=TwoWay}"
+                      ItemsSource="{Binding Items}"
+                      IsPullToRefreshEnabled="true"
+                      ItemTapped="ItemTapped">
+                <!--ItemTapped="Handle_ItemTapped"-->
+                <!---->
+
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                                <StackLayout Orientation="Horizontal">
+                                    <Grid Padding="8,6,8,6">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="40" />
+                                            <ColumnDefinition Width="Auto" />
+                                        </Grid.ColumnDefinitions>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="*" />
+                                            <RowDefinition Height="*" />
+                                        </Grid.RowDefinitions>
+                                        <Label Margin="5,0,0,0" Text="{Binding Nama}" Grid.Column="1" Grid.Row="0" FontAttributes="Bold" FontSize="14" HorizontalOptions="FillAndExpand" />
+                                        <Label Margin="5,0,0,0" Text="{Binding NoTlp}" Grid.Column="1" Grid.Row="1"  FontSize="12" HorizontalOptions="FillAndExpand"/> 
+                                    </Grid>
+                                </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+
+             </ListView>
+                <ImageButton Grid.Row="1"
+                    Margin="0,10,10,100"
+                    VerticalOptions="EndAndExpand"
+                    HorizontalOptions="End"
+                    BackgroundColor="#FF8D14"
+                    CornerRadius="35"
+                    HeightRequest="70"
+                    Clicked="OnClickCreate"
+                    Source="addbutton.png"
+                    WidthRequest="70"/>
+                </Grid>
+        </StackLayout>
+            
+        </StackLayout>
+        <!--Bottom button-->
+        <StackLayout VerticalOptions="End">
+                <Frame HasShadow="True">
+                <Grid>
+
+                <Button
+                BackgroundColor="Transparent"
+                Text="Pesanan"
+                Grid.Column="0"
+                BorderRadius="0" BorderWidth="0"
+                IsEnabled="true"
+                Image="addbutton.png"
+                HeightRequest="50"
+                MinimumHeightRequest="40"
+                VerticalOptions="Center" HorizontalOptions="Center"/>
+
+                <Button
+                BackgroundColor="Transparent"
+                Text="Buat Baru"
+                Grid.Column="1"
+                BorderRadius="0" BorderWidth="0"
+                IsEnabled="true"
+                Image="addbutton.png"
+                HeightRequest="50"
+                MinimumHeightRequest="40"
+                VerticalOptions="Center" HorizontalOptions="Center"/>
+
+                <Button
+                BackgroundColor="Transparent"
+                Text="Account"
+                Grid.Column="2"
+                BorderRadius="0" BorderWidth="0"
+                IsEnabled="true"
+                Image="addbutton.png"
+                HeightRequest="50"
+                MinimumHeightRequest="40"
+                VerticalOptions="Center" HorizontalOptions="Center"/>
+                   
+                </Grid>
+                </Frame>
+        </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+    
+</ContentPage>

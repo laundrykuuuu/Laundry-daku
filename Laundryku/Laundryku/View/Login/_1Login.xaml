@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="Laundryku.View.Login._1Login"
+    BackgroundColor="White">
+
+    <StackLayout Margin="0,40,0,0">
+        <Label
+            Text="LAUNDRY DAKU"
+            FontSize="22"
+            TextColor="#252577"
+            VerticalTextAlignment="Center"
+            HorizontalTextAlignment="Center"
+            FontAttributes="Bold"
+            />
+
+    <Image Source="loginlogo.png" VerticalOptions="Center" HorizontalOptions="Center"/>
+         
+        <StackLayout Margin="20,20,20,20" VerticalOptions="Center">
+
+        <Label 
+        Text="Nomor HP"
+        FontSize="16"
+        TextColor="#252577"
+        VerticalTextAlignment="Start"
+        HorizontalTextAlignment="Start"
+        />
+
+        <Entry
+            BackgroundColor="White"
+            Placeholder="Msukan nomor HP"
+            PlaceholderColor="Gray"/>
+
+        <Button
+        x:Name="btnLogin"
+        Clicked="LoginOnClicked"
+        BorderWidth="2"
+        BackgroundColor="#FF8D14"
+        TextColor="White"
+        BorderRadius="8"
+        Text="Masuk"
+        FontAttributes="Bold"
+        />
+
+    <Grid >
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="5*" />
+        <ColumnDefinition Width="2*" />
+        <ColumnDefinition Width="5*" />
+      </Grid.ColumnDefinitions>
+      <Image Source="listlogin.png"  Grid.Row="0" Grid.Column="0" HeightRequest="2"/>
+      <Label
+        Grid.Row="0"
+        Grid.Column="1"
+        Text="Atau"
+        FontSize="16"
+        TextColor="#CDCDCD"
+        VerticalTextAlignment="Center"
+        HorizontalTextAlignment="Center"
+          HeightRequest="25"
+        />
+        <Image Source="listlogin.png" Grid.Row="0" Grid.Column="2" HeightRequest="2"/>
+    </Grid>
+
+        <Button
+        x:Name="btnDaftar"
+        Clicked="DaftarOnClicked"
+        BorderWidth="2"
+        BorderRadius="8"
+        BorderColor="#FF8D14" 
+        BackgroundColor="White" 
+        TextColor="#FF8D14"
+        Text="Daftar"
+        FontAttributes="Bold"
+        />
+
+    </StackLayout>
+
+  </StackLayout>
+</ContentPage>
